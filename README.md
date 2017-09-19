@@ -11,7 +11,7 @@ melding some different parts to create something that is keyboard focused (since
 
 The bulk of the source code is Apple's own PS2 source code.  Snippets were used from Rehabman's VoodooPS2Controller 
 located here - https://github.com/RehabMan/OS-X-Voodoo-PS2-Controller . Most notably, the ACPI keyboard
-methods for the Elite's hard volume keys, though greatly simplified since this is a targeted solutiong.  Additionally, 
+methods for the Elite's hard volume keys, though greatly simplified since this is a targeted solution.  Additionally, 
 the accidental keypress routines were taken from here - https://github.com/EMlyDinEsHMG/ElanTouchpad-Driver 
 
 The only changes that I'm likely to make going forward would be to replace deprecated functions -- ie IOSyncer, provided
