@@ -35,7 +35,7 @@
 			<key>Make capslock into control</key>
 			<false/>
 			<key>Swap alt and windows key</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>

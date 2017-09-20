@@ -297,6 +297,53 @@ bool ApplePS2Keyboard::dispatchKeyboardEventWithScancode(UInt8 scanCode)
   unsigned int keyCode;
   bool         goingDown;
   AbsoluteTime now;
+    
+    
+    //
+    //Accidental Input Keys
+    //
+    switch (scanCode & ~kSC_UpBit)
+    {
+        case 0X01://ESC
+        case 0X0f://Tab
+        case 0x3a://CapsLock
+        case 0x2a://Shift
+        case 0x36://
+        case 0x1d://Cntrl
+        case 0x5b://Window
+        case 0x38://Alt
+        case 0x5d://ContextMenu
+        case 0x45://NumLock
+        case 0x1c://Enter
+        case 0x0e://Backspace
+        case 0x64://Arrows
+        case 0x65://
+        case 0x66://
+        case 0x67://
+            _accidentalInputKeysException = true;
+            break;
+        case 0x52:/* 0........9 */
+        case 0x4f:
+        case 0x50:
+        case 0x51:
+        case 0x4b:
+        case 0x4c:
+        case 0x4d:
+        case 0x47:
+        case 0x48:
+        case 0x49:
+        case 0x53:/* ". / * - + ENTER" */
+        case 0x63:
+        case 0x37:
+        case 0x4a:
+        case 0x4e:
+        case 0x62:
+            _keyPadKeys = true;
+            break;
+        default:
+            break;
+    }
+    
 
   //
   // See if this scan code introduces an extended key sequence.  If so, note
@@ -466,12 +513,32 @@ bool ApplePS2Keyboard::dispatchKeyboardEventWithScancode(UInt8 scanCode)
   //
   // We have a valid key event -- dispatch it to our superclass.
   //
+
     
   clock_get_uptime((uint64_t *)&now);
-
+    
+    //NUM LOCK and Print Screen Fix
+    if(keyCode == 0x45 && goingDown)
+    {
+        setNumLockFeedback(_numKeypadLocked);
+        _numKeypadLocked = !_numKeypadLocked;
+        
+    }
+    else if(!((keyCode == 0x45 || keyCode == 0x6e) ||//NumLock & PrintScreen
+              //Keypad Buttons
+              ((keyCode == 0x52 || keyCode == 0x53 || keyCode == 0x62 || keyCode == 0x4f || keyCode == 0x50 ||
+                keyCode == 0x51 || keyCode == 0x4b || keyCode == 0x4c || keyCode == 0x4d || keyCode == 0x47 ||
+                keyCode == 0x48 || keyCode == 0x49 || keyCode == 0x63 || keyCode == 0x37 || keyCode == 0x4a ||
+                keyCode == 0x4e)  && _numKeypadLocked)))
         dispatchKeyboardEvent( PS2ToADBMap[keyCode],  //Dispatch of Keyboard Events
-           /*direction*/ goingDown,
-           /*timeStamp*/ now );
+                              /*direction*/ goingDown,
+                              /*timeStamp*/ now );
+    
+    
+        if(_accidentalInputKeysException)
+        _accidentalInputKeysException = false;
+    if(_keyPadKeys)
+        _keyPadKeys = false;
 
   return true;
 }
