@@ -1,5 +1,5 @@
 /* Localized versions of Info.plist keys */
 CFBundleName = "Apple PS2 Controller";
 CFBundleShortVersionString = "1.0";
-CFBundleGetInfoString = "1.0, Copyright Apple Computer, Inc. 2002-2003, © BlankPage";
-NSHumanReadableCopyright = "Copyright Apple Computer, Inc. 2002-2003, © BlankPage";
+CFBundleGetInfoString = "1.0,  © BlankPage";
+NSHumanReadableCopyright = "© BlankPage";

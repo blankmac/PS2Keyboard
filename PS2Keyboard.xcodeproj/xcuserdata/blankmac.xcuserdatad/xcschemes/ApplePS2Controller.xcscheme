@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2778902C1628180800E81B58"
-               BuildableName = "ApplePS2Controller.kext"
-               BlueprintName = "ApplePS2Controller"
-               ReferencedContainer = "container:ApplePS2Controller.xcodeproj">
+               BuildableName = "PS2Keyboard.kext"
+               BlueprintName = "PS2Keyboard"
+               ReferencedContainer = "container:PS2Keyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -46,9 +48,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2778902C1628180800E81B58"
-            BuildableName = "ApplePS2Controller.kext"
-            BlueprintName = "ApplePS2Controller"
-            ReferencedContainer = "container:ApplePS2Controller.xcodeproj">
+            BuildableName = "PS2Keyboard.kext"
+            BlueprintName = "PS2Keyboard"
+            ReferencedContainer = "container:PS2Keyboard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2778902C1628180800E81B58"
-            BuildableName = "ApplePS2Controller.kext"
-            BlueprintName = "ApplePS2Controller"
-            ReferencedContainer = "container:ApplePS2Controller.xcodeproj">
+            BuildableName = "PS2Keyboard.kext"
+            BlueprintName = "PS2Keyboard"
+            ReferencedContainer = "container:PS2Keyboard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
