@@ -65,7 +65,6 @@ private:
   UInt8                    _extendCount;
   UInt8                    _interruptHandlerInstalled:1;
   UInt8                    _powerControlHandlerInstalled:1;
-  UInt8                    _mouseTouchpadNotificationHandlerInstalled:1;
   UInt8                    _ledState;
     
   bool                     _numKeypadLocked;
@@ -81,8 +80,6 @@ private:
   virtual void setLEDs(UInt8 ledState);
   virtual void setKeyboardEnable(bool enable);
   virtual void setDevicePowerState(UInt32 whatToDo);
-  //Receiving Notifications
-  virtual void   receiveMouseTouchpadNotifications(UInt32 data);
 
 protected:
   virtual const unsigned char * defaultKeymapOfLength(UInt32 * length);
