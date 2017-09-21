@@ -1,7 +1,7 @@
 # PS2Keyboard
 
 This is aimed squarely at OS X 10.12 Sierra, the brightness keys would need to be altered in the source for El Cap.  
-There's no caps lock fix implemented because the solution causes more problems than it's worth, just hit it twice.  
+There's no caps lock fix implemented for the moment, just hit it twice.  
 
 The purpose of this project is a tailored PS2 keyboard solution for the HP Elite X2 1012 G2 (it *may* work for the G1 as well).
 I've used VoodooPS2 in the past, but always had issues with lid initiated sleep/wake using it.  I've also used the SmartTouchPad kext
